@@ -33,11 +33,52 @@
 ```sh
 git init
 git commit -m "please write your message"
-git remote add origin gitrepositoryのURL
+git remote add origin ${repositoryのURL}
 git branch -m master
 git push -u origin master
 ```
 ---
+### repositoryのコピー・クローン
+```sh
+git clone ${sshのコードorURL}
+```
+
+### ブランチの操作
+
+- ブランチを切り替える
+
+```sh
+$ git switch develop
+# または
+$ git checkout develop
+```
+
+- 新しくブランチを切る
+
+```sh
+$ git switch -c fix-bug develop
+# または
+$ git checkout -b fix-bug develop
+```
+
+---
+### なんでbranchを分けるの？
+A,バックアップのため。変な機能を実装しないため、etc..
+![branch構造図](./branch_structure.png)
+
+---
+
+### checkoutとswitchのどちらを使うべきか
+
+ブランチ操作を扱う分にはどちらでもいいです。
+
+ただしswitchは実験的なコマンドであるため、その動作は今後変わる可能性があることに注意しましょう。
+https://git-scm.com/docs/git-switch/2.45.2
+
+---
+
+
+
 ### 変更をステージする
 
 ステージングとは、コミットによってスナップショットを撮る準備段階のこと。
@@ -131,36 +172,6 @@ git version 2.45.2
 ```
 
 ---
-
-### ブランチの操作
-
-- ブランチを切り替える
-
-```sh
-$ git switch develop
-# または
-$ git checkout develop
-```
-
-- 新しくブランチを切る
-
-```sh
-$ git switch -c fix-bug develop
-# または
-$ git checkout -b fix-bug develop
-```
-
----
-
-### checkoutとswitchのどちらを使うべきか
-
-ブランチ操作を扱う分にはどちらでもいいです。
-
-ただしswitchは実験的なコマンドであるため、その動作は今後変わる可能性があることに注意しましょう。
-https://git-scm.com/docs/git-switch/2.45.2
-
----
-
 
 ### 変更を元に戻す
 
